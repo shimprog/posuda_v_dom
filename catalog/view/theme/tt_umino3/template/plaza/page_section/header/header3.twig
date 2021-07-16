@@ -1,0 +1,101 @@
+<div class="header-absolute">	
+	<nav id="top">
+	  <div class="container">
+		<div class="box-inner">
+			<ul class="box-top box-top-left pull-left">
+				<li class="text-header"><p>{{ text_header }}</p></li>
+				<li class="link-login hidden-lg">
+					{% if logged %}
+					<a class="pt-logout-link" href="{{ logout }}">{{ text_logout }}</a>
+					{% else %}
+					<a class="pt-register-link" href="{{ register }}">{{ text_register }}</a>
+					<span>{{ text_or }}</span>
+					<a class="pt-login-link" href="{{ login }}">{{ text_login }}</a>
+					{% endif %}
+				</li>
+			</ul>
+			<ul class="box-top box-top-right pull-right">
+				<li><a href="{{ contact }}" title="{{ text_store_locator }}"><i class="icon-location-pin icons"></i> <span class="hidden-xs">{{ text_store_locator }}</span></a></li>
+				<li><a href="{{ checkout }}" title="{{ text_checkout }}"><i class="icon-credit-card icons"></i> <span class="hidden-xs">{{ text_checkout }}</span></a></li>
+				<li class="currency">
+				{% if header_currency %}
+				  {{ currency }}
+				{% endif %}
+				</li>
+				<li class="language">
+				{{ language }}
+				</li>
+				{% if logged %}
+				<li id="top-links" class="nav header-dropdown">
+				  <ul class="list-inline">
+					<li class="dropdown"><a href="{{ account }}" title="{{ text_account }}" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user icons"></i> <span class="hidden-xs">{{ text_account }}</span> <i class="icon-right icon-arrow-down"></i></a>
+					  <ul class="dropdown-menu dropdown-menu-right pt-account">
+						
+						<li><a href="{{ account }}">{{ text_account }}</a></li>
+						<li><a href="{{ order }}">{{ text_order }}</a></li>
+						<li><a href="{{ transaction }}">{{ text_transaction }}</a></li>
+						<li><a href="{{ download }}">{{ text_download }}</a></li>
+						<li><a class="pt-logout-link" href="{{ logout }}">{{ text_logout }}</a></li>
+						
+					  </ul>
+					</li>
+				  </ul>
+				</li>
+				{% endif %}
+				<!--li><a href="{{ shopping_cart }}" title="{{ text_shopping_cart }}"><i class="fa fa-shopping-cart"></i> <span>{{ text_shopping_cart }}</span></a></li-->
+				
+			</ul>
+		</div>
+	  </div>
+	</nav>
+	<header class="scroll-fix ">
+		<div class="header-middle layout-fluid">	
+			<div class="container">
+				<div class="box-inner">
+					<div class="box-inner-inner">
+						<div class="col-logo">
+							{{ position3 }}				
+							<div id="logo">
+							{% if logo %}<a href="{{ home }}"><img src="{{ logo }}" title="{{ name }}" alt="{{ name }}" class="img-responsive" /></a>{% else %}
+							  <h1><a href="{{ home }}">{{ name }}</a></h1>
+							  {% endif %}
+							</div>
+						</div>
+						<div class="col-hoz">
+						{{ position2 }}
+						
+						</div>
+
+						<div class="col-cart">
+							<div class="inner">
+								<div class="link-login visible-lg">
+									{% if logged %}
+									<a class="pt-logout-link" href="{{ logout }}">{{ text_logout }}</a>
+									{% else %}
+									<a class="pt-register-link" href="{{ register }}">{{ text_register }}</a>
+									<span>{{ text_or }}</span>
+									<a class="pt-login-link" href="{{ login }}">{{ text_login }}</a>
+									{% endif %}
+								</div>
+								{{ search }}
+								<a href="{{ wishlist }}" id="wishlist-total" ><span>{{ text_wishlist }}</span></a>
+								{% if header_cart %}{{ cart }}{% endif %}
+							</div>
+						</div>
+						<div class="header-phone">
+							<div class="inner">
+								<i class="icon-call-out icons"></i> 
+								<div class="text">
+									<p>{{ text_need_help }}</p>
+									<span>{{ telephone }}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+	</header>
+</div>
